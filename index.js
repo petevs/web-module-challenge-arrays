@@ -122,7 +122,6 @@ Your function should accept:
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
 function copy(flavorList) {
-  /*code here*/
   return [...flavorList];
 }
 
@@ -164,9 +163,21 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/) {
+function getAverageWordLength(arrayParam) {
   /*code here*/
+  let wordCountList = [];
+  for (i = 0; i < arrayParam.length; i++) {
+    wordCountList.push(arrayParam[i].split(" ").length);
+  }
+  let wordCountListTotal = 0;
+  for (i = 0; i < wordCountList.length; i++) {
+    wordCountListTotal += wordCountList[i];
+  }
+  return wordCountListTotal / arrayParam.length;
 }
+
+//get list name
+// for each item in list, separate the words, create a new list and count
 
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
 
